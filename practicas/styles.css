@@ -7,10 +7,10 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-yellow-400: oklch(0.852 0.199 91.936);
-    --color-green-600: oklch(0.627 0.194 149.214);
-    --color-sky-600: oklch(0.588 0.158 241.966);
     --color-blue-500: oklch(0.623 0.214 259.815);
+    --color-blue-600: oklch(0.546 0.245 262.881);
     --color-blue-900: oklch(0.379 0.146 265.522);
+    --color-pink-500: oklch(0.656 0.241 354.308);
     --color-pink-600: oklch(0.592 0.249 0.584);
     --color-pink-700: oklch(0.525 0.223 3.958);
     --color-gray-50: oklch(0.985 0.002 247.839);
@@ -243,17 +243,17 @@
   .bg-blue-500 {
     background-color: var(--color-blue-500);
   }
+  .bg-blue-600 {
+    background-color: var(--color-blue-600);
+  }
   .bg-gray-50 {
     background-color: var(--color-gray-50);
   }
-  .bg-green-600 {
-    background-color: var(--color-green-600);
+  .bg-pink-500 {
+    background-color: var(--color-pink-500);
   }
   .bg-pink-600 {
     background-color: var(--color-pink-600);
-  }
-  .bg-sky-600 {
-    background-color: var(--color-sky-600);
   }
   .object-cover {
     object-fit: cover;
@@ -261,8 +261,29 @@
   .p-8 {
     padding: calc(var(--spacing) * 8);
   }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+  .px-8 {
+    padding-inline: calc(var(--spacing) * 8);
+  }
+  .px-10 {
+    padding-inline: calc(var(--spacing) * 10);
+  }
   .px-12 {
     padding-inline: calc(var(--spacing) * 12);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5);
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
