@@ -4,15 +4,15 @@
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-200: oklch(0.885 0.062 18.334);
+    --color-red-300: oklch(0.808 0.114 19.571);
     --color-red-500: oklch(0.637 0.237 25.331);
+    --color-red-600: oklch(0.577 0.245 27.325);
     --color-green-400: oklch(0.792 0.209 151.711);
     --color-violet-600: oklch(0.541 0.281 293.009);
     --color-violet-800: oklch(0.432 0.232 292.759);
-    --color-gray-900: oklch(0.21 0.034 264.665);
+    --color-gray-500: oklch(0.551 0.027 264.364);
     --color-white: #fff;
     --spacing: 0.25rem;
     --breakpoint-md: 48rem;
@@ -169,11 +169,38 @@
   }
 }
 @layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .fixed {
+    position: fixed;
+  }
+  .relative {
+    position: relative;
+  }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
+  .inset-x-0 {
+    inset-inline: calc(var(--spacing) * 0);
+  }
+  .top-10 {
+    top: calc(var(--spacing) * 10);
+  }
+  .top-40 {
+    top: calc(var(--spacing) * 40);
+  }
+  .left-20 {
+    left: calc(var(--spacing) * 20);
+  }
+  .z-10 {
+    z-index: 10;
+  }
+  .z-20 {
+    z-index: 20;
+  }
   .mx-auto {
     margin-inline: auto;
-  }
-  .my-1 {
-    margin-block: calc(var(--spacing) * 1);
   }
   .my-12 {
     margin-block: calc(var(--spacing) * 12);
@@ -199,9 +226,6 @@
   .inline-block {
     display: inline-block;
   }
-  .inline-flex {
-    display: inline-flex;
-  }
   .h-20 {
     height: calc(var(--spacing) * 20);
   }
@@ -210,6 +234,18 @@
   }
   .h-64 {
     height: calc(var(--spacing) * 64);
+  }
+  .h-96 {
+    height: calc(var(--spacing) * 96);
+  }
+  .h-\[100vh\] {
+    height: 100vh;
+  }
+  .h-\[300vh\] {
+    height: 300vh;
+  }
+  .h-full {
+    height: 100%;
   }
   .h-screen {
     height: 100vh;
@@ -226,6 +262,9 @@
   .w-\[90\%\] {
     width: 90%;
   }
+  .w-full {
+    width: 100%;
+  }
   .max-w-screen-md {
     max-width: var(--breakpoint-md);
   }
@@ -238,23 +277,14 @@
   .items-center {
     align-items: center;
   }
-  .items-start {
-    align-items: flex-start;
-  }
   .justify-between {
     justify-content: space-between;
   }
   .justify-center {
     justify-content: center;
   }
-  .gap-4 {
-    gap: calc(var(--spacing) * 4);
-  }
   .gap-8 {
     gap: calc(var(--spacing) * 8);
-  }
-  .overflow-auto {
-    overflow: auto;
   }
   .rounded-\[50px\] {
     border-radius: 50px;
@@ -266,33 +296,9 @@
     border-bottom-right-radius: var(--radius-xl);
     border-bottom-left-radius: var(--radius-xl);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
-  .border-2 {
-    border-style: var(--tw-border-style);
-    border-width: 2px;
-  }
   .border-8 {
     border-style: var(--tw-border-style);
     border-width: 8px;
-  }
-  .border-x-8 {
-    border-inline-style: var(--tw-border-style);
-    border-inline-width: 8px;
-  }
-  .border-x-10 {
-    border-inline-style: var(--tw-border-style);
-    border-inline-width: 10px;
-  }
-  .border-x-100 {
-    border-inline-style: var(--tw-border-style);
-    border-inline-width: 100px;
-  }
-  .border-y-8 {
-    border-block-style: var(--tw-border-style);
-    border-block-width: 8px;
   }
   .border-double {
     --tw-border-style: double;
@@ -301,17 +307,14 @@
   .border-green-400 {
     border-color: var(--color-green-400);
   }
-  .border-x-green-400 {
-    border-inline-color: var(--color-green-400);
-  }
   .border-y-red-500 {
     border-block-color: var(--color-red-500);
   }
-  .bg-gray-900 {
-    background-color: var(--color-gray-900);
+  .bg-red-300\/50 {
+    background-color: color-mix(in oklab, var(--color-red-300) 50%, transparent);
   }
-  .bg-red-200 {
-    background-color: var(--color-red-200);
+  .bg-red-600\/50 {
+    background-color: color-mix(in oklab, var(--color-red-600) 50%, transparent);
   }
   .bg-violet-600 {
     background-color: var(--color-violet-600);
@@ -346,18 +349,6 @@
   .font-\[\'Montserrat\'\] {
     font-family: 'Montserrat';
   }
-  .font-\[Montserrat\] {
-    font-family: Montserrat;
-  }
-  .font-mono {
-    font-family: var(--font-mono);
-  }
-  .font-sans {
-    font-family: var(--font-sans);
-  }
-  .font-serif {
-    font-family: var(--font-serif);
-  }
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
@@ -379,6 +370,9 @@
   }
   .text-\[lg\] {
     color: lg;
+  }
+  .text-gray-500 {
+    color: var(--color-gray-500);
   }
   .text-violet-800 {
     color: var(--color-violet-800);
